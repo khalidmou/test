@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        body {
+        background-image: url('background.jpg');
+    
+         }
+        h1{text-align: center;}
+        label
+        {
+            display: inline-block;
+            text-align: right;
+            width: 200px;
+        }
+        form{text-align: center;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Amount</title>
+    <h1>Total Amount</h1>
+</head>
+<body background="background.jpg">
+    <div>
+        <form action="/booking_number" method="post">
+            <label for="">Amount Due: <%=total_amount%></label>
+            <input type="hidden" name="total_amount" value="<%=total_amount%>" />
+            <input type="hidden" name="flight_id" value="<%=flight_id%>" />
+            <br/><br/>
+            <label for="">Credit Card: </label>
+            <input type="number" name="credit_card" required="required">
+            <br>
+            <label for="">Customer Name: </label>
+            <input type="text" name="customer_name" required="required">
+            <br>
+            <label for="">Email: </label>
+            <input type="email" name="email" required="required">
+            <br>
+            <label for="">Phone Number: </label>
+            <input type="text" name="phone_number" required="required">
+            <br><br>
+            <input type="submit"  class="btn btn-outline-primary" value="Submit Payment">
+        </form>
+    </div>
+</body>
+</html>

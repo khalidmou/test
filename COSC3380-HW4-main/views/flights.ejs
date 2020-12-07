@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        body {
+        background-image: url('background.jpg');
+    
+         }
+
+        h1{text-align: center;}
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        th,td{
+            width: 25%
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights</title>
+    <h1>Flights</h1>
+</head>
+<body>
+    <form action="/payment" method="post" id="form2">
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight-ID</th>
+                    <th>Scheduled-Departure</th>
+                    <th>Scheduled-Arrival</th>
+                    <th>Departure-Airport</th>
+                    <th>Arrival-Airport</th>
+                    <th>Available-Seats</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <br>
+            <tbody>
+                <% for (var i = 0; i < data_flights.rowCount; i++) { %>
+                    <% if(data_flights.rows[i].seats_available - seats > -1) {%>
+                        <tr>
+                            <td><%=data_flights.rows[i].flight_id%></td>
+                            <td><%= data_flights.rows[i].scheduled_departure%></td>
+                            <td><%= data_flights.rows[i].scheduled_departure%></td>
+                            <td><%=data_flights.rows[i].departure_airport%></td>
+                            <td><%=data_flights.rows[i].arrival_airport%></td>
+                            <td><%= data_flights.rows[i].seats_available%></td>
+                            <td><input type="radio" name='flight_id' value=<%=data_flights.rows[i].flight_id%> required></td>
+                        </tr>
+                        <%}
+                    %>
+                    <br>
+                <%}%>
+            </tbody>
+        </table>
+        <br>
+        <div style="text-align:center">  
+            <input type="submit" value="Book Flight">  
+        </div>
+    </form>
+
+</body>
+</html>

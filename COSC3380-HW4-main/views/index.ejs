@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        body {
+        background-image: url('background.jpg');
+
+         }
+        h1{text-align: center;}
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        th,td{
+            width: 25%
+        }
+        body  {
+     background-image: url("background.jpg");
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Flight</title>
+    <h1>Search Flight</h1>
+</head>
+<body>
+    <div>
+        <form action="" id="form1">
+            <label for="">Origin: </label>
+        <select name="origin_city" id="city">
+            <% for(var i = 0;i < airport_data.rowCount; i++){%>
+                    <option value=<%=airport_data.rows[i].airport_code%>><%=airport_data.rows[i].city%></option>
+                <%}
+            %>
+        </select>
+        <label for="">Destination: </label>
+        <select name="destination_city" id="city">
+            <% for(var i = 0;i < airport_data.rowCount; i++){%>
+                    <option value=<%=airport_data.rows[i].airport_code%>><%=airport_data.rows[i].city%></option>
+                <%}
+            %>
+        </select>
+        <label for="">Seats: </label>
+        <select name="seats" id="seats">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <input type="submit" value="Search Flights">
+        </form>
+
+        <form action="" id="form2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flight-ID</th>
+                        <th>Scheduled-Departure</th>
+                        <th>Scheduled-Arrival</th>
+                        <th>Departure-Airport</th>
+                        <th>Arrival-Airport</th>
+                        <th>Available-Seats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name=flight></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name=flight></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name=flight></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name=flight></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name=flight></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name=flight></td>
+                    </tr>
+                </tbody>
+            </table> 
+        </form>
+
+    </div>
+</body>
+</html>
